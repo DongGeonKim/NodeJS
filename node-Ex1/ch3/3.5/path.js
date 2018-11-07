@@ -23,4 +23,4 @@ console.log('path.isAbsolute():', path.isAbsolute('./home'));
 console.log('------------------------------');
 console.log('path.relative():', path.relative('C:\\users\\zerocho\\path.js', 'C:\\'));
 console.log('path.join():', path.join(__dirname, '..', '..', '/users', '.', '/zerocho'));
-console.log('path.resolve():', path.resolve(__dirname, '..', 'users', '.', '/zerocho'));
+console.log('path.resolve():', path.resolve(__dirname, '..','..', 'users', '.', '/zerocho'));
