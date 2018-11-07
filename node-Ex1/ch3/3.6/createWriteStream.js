@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writeStream = fs.createWriteStream('./writeme2.txt');
+const writeStream = fs.createWriteStream('ch3/3.6/writeme2.txt');
 writeStream.on('finish', () => {
   console.log('파일 쓰기 완료');
 });
