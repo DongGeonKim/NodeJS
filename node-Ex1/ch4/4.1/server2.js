@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 
 http.createServer((req, res) => {
-  fs.readFile('./server2.html', (err, data) => {
+  fs.readFile('ch4/4.1/server2.html', (err, data) => {
     if (err) {
       throw err;
     }
