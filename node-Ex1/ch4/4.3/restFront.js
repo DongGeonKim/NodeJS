@@ -3,6 +3,7 @@ function getUser() { // 로딩 시 사용자 가져오는 함수
   xhr.onload = function () {
     if (xhr.status === 200) {
       var users = JSON.parse(xhr.responseText);
+      console.log("users : " + users);
       var list = document.getElementById('list');
       list.innerHTML = '';
       Object.keys(users).map(function (key) {

@@ -31,7 +31,7 @@ http.createServer((req, res) => {
       'Set-Cookie': `session=${randomInt}; Expires=${expires.toGMTString()}; HttpOnly; Path=/`,
     });
     res.end();
-  } else if (cookies.session && session[cookies.session].expires > new Date()) {
+  } else if (cookies.session) {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     res.end(`${session[cookies.session].name}님 안녕하세요`);
   } else {

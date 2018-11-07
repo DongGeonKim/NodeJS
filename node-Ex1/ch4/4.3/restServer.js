@@ -47,6 +47,7 @@ http.createServer((req, res) => {
   } else if (req.method === 'PUT') {
     if (req.url.startsWith('/users/')) {
       const key = req.url.split('/')[2];
+      console.log(req.url + " | PUT key : " + key);
       let body = '';
       req.on('data', (data) => {
         body += data;

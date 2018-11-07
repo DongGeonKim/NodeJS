@@ -17,6 +17,7 @@ http.createServer((req, res) => {
   if (req.url.startsWith('/login')) {
     const { query } = url.parse(req.url);
     const { name } = qs.parse(query);
+    console.log(query + ":" + name);
     const expires = new Date();
     expires.setMinutes(expires.getMinutes() + 5);
     res.writeHead(302, {
