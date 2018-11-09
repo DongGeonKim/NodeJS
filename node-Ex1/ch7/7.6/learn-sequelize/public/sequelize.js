@@ -157,6 +157,7 @@ document.getElementById('comment-form').addEventListener('submit', function (e) 
       console.error(xhr.responseText);
     }
   };
+  
   xhr.open('POST', '/comments');
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify({ id: id, comment: comment }));
