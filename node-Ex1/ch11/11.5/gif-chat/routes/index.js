@@ -28,8 +28,9 @@ router.post('/room', async (req, res, next) => {
       password: req.body.password,
     });
     const newRoom = await room.save();
+    console.log("room post newRoom : " + newRoom);
     const io = req.app.get('io');
-    io.of('/room').emit('newRoom', newRoom);
+    io.of('/room').emit('newRoom', newRoom);	//room 네임스페이스에 연결된 모든 사용자들에게 새로운 방이 열렸다는 내용을 알림(즉, 메인페이지에 신규 채팅방이 바로 생김)
     res.redirect(`/room/${newRoom._id}?password=${req.body.password}`);
   } catch (error) {
     console.error(error);
