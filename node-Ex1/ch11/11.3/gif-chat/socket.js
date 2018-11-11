@@ -16,9 +16,11 @@ module.exports = (server) => {
     });
     socket.on('reply', (data) => {
       console.log(data);
-    });
+    });	
     socket.interval = setInterval(() => {
       socket.emit('news', 'Hello Socket.IO');
+      // (news:이벤트 이름, Hello...:데이터)
+      // 클라이언트가 이 메시지를 받기 위해서는 news 이벤트 리스터를 만들어두어야 함
     }, 3000);
   });
 };
