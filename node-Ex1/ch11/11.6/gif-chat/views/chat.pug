@@ -67,6 +67,7 @@ block content
       } else {
         var gif = document.createElement('img');
         gif.src = '/gif/' + data.gif;
+        console.log("data.gif : " + data.gif);
         div.appendChild(gif);
       }
       div.style.color = data.user;

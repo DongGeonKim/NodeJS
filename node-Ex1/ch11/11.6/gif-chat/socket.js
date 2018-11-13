@@ -38,8 +38,11 @@ module.exports = (server, app, sessionMiddleware) => {
       const userCount = currentRoom ? currentRoom.length : 0;
       if (userCount === 0) {
         axios.delete(`http://localhost:8005/room/${roomId}`)
-          .then(() => {
-            console.log('방 제거 요청 성공');
+          .then((result) => {
+	    	  /*Object.keys(result).forEach(function (key) {
+	    		  console.log(key + ":" + result[key]);
+	    		});*/
+            console.log('방 제거 요청 성공 : ' + result.data);
           })
           .catch((error) => {
             console.error(error);

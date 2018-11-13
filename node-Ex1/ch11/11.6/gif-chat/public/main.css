@@ -57,10 +57,6 @@ label[for='gif'] {
 	padding: 5px;
 }
 
-#gif {
-	display: none;
-}
-
 table, table th, table td {
 	text-align: center;
 	border: 1px solid silver;

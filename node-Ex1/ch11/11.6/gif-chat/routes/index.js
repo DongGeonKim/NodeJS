@@ -74,7 +74,8 @@ router.delete('/room/:id', async (req, res, next) => {
   try {
     await Room.remove({ _id: req.params.id });
     await Chat.remove({ room: req.params.id });
-    res.send('ok');
+    //res.send(404);
+    res.status(200).send('some text')
     setTimeout(() => {
       req.app.get('io').of('/room').emit('removeRoom', req.params.id);
     }, 2000);
@@ -126,6 +127,7 @@ router.post('/room/:id/gif', upload.single('gif'), async (req, res, next) => {
       gif: req.file.filename,
     });
     await chat.save();
+    console.log("chat.gif : " + chat.gif);
     req.app.get('io').of('/chat').to(req.params.id).emit('chat', chat);
     res.send('ok');
   } catch (error) {
